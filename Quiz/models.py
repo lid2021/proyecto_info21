@@ -28,3 +28,4 @@ class ElegirRespuesta(models.Model): #se crea y se polimorfea con la clase 'Preg
     def __str__(self):
         return self.texto
     
+    
