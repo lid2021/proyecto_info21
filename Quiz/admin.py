@@ -1,12 +1,15 @@
 from django.contrib import admin
 from .models import Preguntas, ElegirRespuesta
 
-# Register your models here.
+ #Register your models here.
 
 class ElegirRespuestaInline(admin.TabularInline):
     ''' Se hereda del campo elejirResuesta las respuestas de las preguntas, 
     para listarlas dentro de la clase PreguntaAdmin como un multiple choices, con list_display'''
     model = ElegirRespuesta
+    can_delete = False 
+    max_num = ElegirRespuesta.MAXIMO_RESPUESTAS
+    min_num = ElegirRespuesta.MAXIMO_RESPUESTAS
     
 class PreguntaAdmin(admin.ModelAdmin):
     model = Preguntas

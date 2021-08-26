@@ -20,6 +20,7 @@ class ElegirRespuesta(models.Model): #se crea y se polimorfea con la clase 'Preg
     
     #Atributo de la clase
     #Se limpia el campo despues de recargar la preguntaPara que la DB nos muestre el campo con ese nombre referencial
+    MAXIMO_RESPUESTAS = 5
     pregunta = models.ForeignKey(Preguntas, related_name='preguntas', on_delete=models.CASCADE)
     #El campo booleano es para marcar la respuesta correcta al momento de cargar las preguntas
     correcta = models.BooleanField(verbose_name='¿Es la Pregunta Correcta?',default=False, null=False)
